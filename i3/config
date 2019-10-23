@@ -1,0 +1,315 @@
+# for_window [class="MPlayer"] layout tabbed enable
+# assign [class="MPlayer"] 3
+
+for_window [title="tmuxmplayer"] border none
+for_window [title="tmuxmplayer"] floating enable
+assign [title="tmuxmplayer"] 1
+
+for_window [class="Zathura"] floating enable
+for_window [window_role="pop-up"] floating enable
+
+# for_window[class="xfd"] border enable 
+# for_window[class="Desktop"] floating disable
+# for_window[class="xfdesktop"] fullscreen disable
+# for_window [class="xfdesktop"] fullscreen enable
+# assign [class="xfdesktop"] 1
+
+# for_window [class="notification_popup"] floating enable
+# for_window [class="Lxterminal"] layout tabbed enable
+
+set $HOST "arch-laptop"
+
+
+# Set up Super and alt as modifier keys
+set $super Mod4
+set $mod Mod1
+
+# Use a nice font
+font pango:Source Code Pro for Powerline Regular 8
+# font pango:Font Awesome 5 Brands Regular 8
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+# Start a terminal with urxvt and (re)attach to a tmux sessiongtk.WINDOW_POPUP
+bindsym $super+Return exec urxvt -e tmux new-session -ADs "$HOST"
+# bindsym $super+Return exec lxterminal -e tmux new-session -ADs "$HOST"
+
+# Open a terminal using lxterminal
+bindsym $super+Shift+Return exec lxterminal
+
+# kill focused window
+bindsym $super+Shift+q kill
+
+# start dmenu
+bindsym $super+d exec dmenu_run
+bindsym $super+Shift+d exec --no-startup-id i3-dmenu-desktop
+
+# Focus windows using vim like navigation instead of i3's defaults
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
+
+# Move focused window with vim like navigation instead of i3's defaults
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
+bindsym $mod+Shift+h move left 30
+bindsym $mod+Shift+j move down 30
+bindsym $mod+Shift+k move up 30
+bindsym $mod+Shift+l move right 30
+
+# alternatively, you can use the cursor keys:
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+bindsym $super+x split toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $super+w layout tabbed
+bindsym $super+s layout toggle split
+
+# toggle tiling / floating
+bindsym $super+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $super+space focus mode_toggle
+
+# focus the parent container
+bindsym $super+a focus parent
+
+# switch to workspace
+# Super + Number for workspaces 1-10
+# Alt + Number for workspaces 11-20
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+bindsym $super+0 workspace 10
+bindsym $mod+1 workspace 11
+bindsym $mod+2 workspace 12
+bindsym $mod+3 workspace 13
+bindsym $mod+4 workspace 14
+bindsym $mod+5 workspace 15
+bindsym $mod+6 workspace 16
+bindsym $mod+7 workspace 17
+bindsym $mod+8 workspace 18
+bindsym $mod+9 workspace 19
+bindsym $mod+0 workspace 20
+
+# move focused container to workspace
+# Super + Number for 1 - 10
+# Alt + Number for 11 - 20
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+bindsym $super+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 11
+bindsym $mod+Shift+2 move container to workspace 12
+bindsym $mod+Shift+3 move container to workspace 13
+bindsym $mod+Shift+4 move container to workspace 14
+bindsym $mod+Shift+5 move container to workspace 15
+bindsym $mod+Shift+6 move container to workspace 16
+bindsym $mod+Shift+7 move container to workspace 17
+bindsym $mod+Shift+8 move container to workspace 18
+bindsym $mod+Shift+9 move container to workspace 19
+bindsym $mod+Shift+0 move container to workspace 20
+
+# reload the configuration file
+bindsym $super+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize windows
+mode "resize" {
+        # Pressing h will shrink the window’s width.
+		# Pressing j will grow the window’s height.
+		# Pressing k will shrink the window’s height.
+        # Pressing l will grow the window’s width.
+		bindsym h resize shrink width 10 px or 10 ppt
+		bindsym j resize grow height 10 px or 10 ppt
+		bindsym k resize shrink height 10 px or 10 ppt
+		bindsym l resize grow width 10 px or 10 ppt
+		bindsym H resize shrink width 30 px or 30 ppt
+		bindsym J resize grow height 30 px or 30 ppt
+		bindsym K resize shrink height 30 px or 30 ppt
+		bindsym L resize grow width 30 px or 30 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $super+r mode "resize"
+
+
+# Multiple display settings
+set $mode_vga VGA [o] VGA ON, [x] VGA OFF, [h] VGA LEFT, [j] VGA DOWN, [k] VGA UP, [l] VGA RIGHT
+mode "$mode_vga" {
+	bindsym x exec --no-startup-id xrandr --output VGA-1 --auto --off, mode "default"
+	bindsym o exec --no-startup-id xrandr --output VGA-1 --auto --left-of eDP-1, mode "default"
+	bindsym h exec --no-startup-id xrandr --output VGA-1 --auto --left-of eDP-1, mode "default"
+	bindsym j exec --no-startup-id xrandr --output VGA-1 --auto --below eDP-1, mode "default"
+	bindsym k exec --no-startup-id xrandr --output VGA-1 --auto --above eDP-1, mode "default"
+	bindsym l exec --no-startup-id xrandr --output VGA-1 --auto --right-of eDP-1, mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+set $mode_hdmi HDMI [o] HDMI ON, [x] HDMI OFF, [h] HDMI LEFT, [j] HDMI DOWN, [k] HDMI UP, [l] HDMI RIGHT
+mode "$mode_hdmi" {
+	bindsym x exec --no-startup-id xrandr --output HDMI-1 --auto --off, mode "default"
+	bindsym o exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1, mode "default"
+	bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1, mode "default"
+	bindsym j exec --no-startup-id xrandr --output HDMI-1 --auto --below eDP-1, mode "default"
+	bindsym k exec --no-startup-id xrandr --output HDMI-1 --auto --above eDP-1, mode "default"
+	bindsym l exec --no-startup-id xrandr --output HDMI-1 --auto --right-of eDP-1, mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+## Manual management of external displays
+# Set the shortcuts and what they do
+set $mode_display Display Settings: [v] VGA, [h] HDMI
+mode "$mode_display" {
+	bindsym v mode "$mode_vga"
+	bindsym h mode "$mode_hdmi"
+	# bindsym v exec --no-startup-id xrandr --output VGA-1 --auto --left-of eDP-1, mode "default"
+	# bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1, mode "default"
+	# bindsym x exec --no-startup-id xrandr --output VGA-1 --auto --off, mode "default"
+	# bindsym y exec --no-startup-id xrandr --output HDMI-1 --auto --off, mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+x mode "$mode_display"
+
+
+set $mode_system System (e) logout, (s) suspend
+mode "$mode_system" {
+    # bindsym l exec --no-startup-id i3lock, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    # bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    # bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    # bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Delete mode "$mode_system"
+
+
+
+# i3bar setup
+bar {
+	colors {
+		background 			#222222
+		focused_workspace  	#2D72E2 #2D72E2 #ffffff
+		active_workspace   	#333333 #5f676a #ffffff
+		inactive_workspace 	#444444 #444444 #aaaaaa
+		urgent_workspace 	#f24126 #f24126 #ffffff
+	}
+	status_command py3status -c ~/.i3/i3status.conf
+	tray_output primary
+}
+
+client.focused 				#444444 #444444 #FFFFFF
+client.unfocused 			#222222 #222222 #FFFFFF
+client.focused_inactive 	#222222 #222222 #FFFFFF
+client.urgent 				#f24126 #f24126 #FFFFFF
+
+# Custom Modes =======================================
+
+set $launch "launch:  [G]imp  [Q]utebrowser  [T]erminal"
+bindsym $super+m      mode $launch
+
+mode $launch {
+	bindsym q exec qutebrowser; mode "default"
+	bindsym t split v; exec lxterminal -e tmux new-session -ADs TmuxSession; mode "default"
+	bindsym g exec gimp; mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+# set $quadrant "Quadrant: [h] [l] [j] [k] [u] [i] [g] [G]"
+# bindsym $super+n mode $quadrant
+# mode $quadrant {
+	# bindsym j exec ~/i3moveit.py bottom_left
+	# bindsym k exec ~/i3moveit.py bottom_right
+	# bindsym u exec ~/i3moveit.py top_left
+	# bindsym i exec ~/i3moveit.py top_right
+	# bindsym h exec ~/i3moveit.py left
+	# bindsym l exec ~/i3moveit.py right
+# 
+	# bindsym g exec ~/i3moveit.py top
+	# bindsym Shift+G exec ~/i3moveit.py bottom
+	# bindsym Tab focus left
+	# bindsym Return mode "default"
+	# bindsym Escape mode "default"
+# }
+
+bindsym $super+p sticky toggle
+
+# Keybindings =======================================
+# bindsym $super+y fullscreen toggle; floating enable; resize set 422 240; sticky toggle; move position 1125 600
+
+# Brightness Keys
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+
+
+# Volume Keys
+bindsym XF86AudioLowerVolume exec ~/.i3/bin/volume_decrease.sh
+bindsym XF86AudioRaiseVolume exec ~/.i3/bin/volume_increase.sh
+
+
+# Window Classification  ==========================================
+assign [class="qutebrowser"] 2
+# assign [class="MPlayer"] 3
+for_window [title="TmuxSession"] move container to workspace 1
+
+bindsym $mod+p exec scrot '%Y-%m-%d_%H:%M:%S_scrot.png' -e 'mv $f ~/Documents/screenshots/'
+
+# Mark as scratchpad
+bindsym $mod+s move scratchpad
+bindsym $mod+Shift+s scratchpad toggle
+
+focus_wrapping no
+exec --no-startup-id compton
+
+
