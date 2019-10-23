@@ -1,0 +1,24 @@
+# Font ===================================================
+font = "Source Code Pro for Powerline"
+
+# Subtitles
+
+subfont-text-scale = 3
+subalign = 2
+# sub-bg-alpha = 128
+# sub-bg-color = 0
+# subpos = 90
+
+# Use subtitle files matching filename
+sub-fuzziness = 1
+
+# Set font encoding.
+subfont-encoding = unicode
+
+# Set subtitle file encoding.
+unicode = yes
+utf8 = yes
+
+# On screen display
+progbar-align=15
+subfont-osd-scale=2
