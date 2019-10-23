@@ -28,6 +28,7 @@ compinit
 export EDITOR="vim"
 export BROWSER="qutebrowser"
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Set a prompt with extra information on the left
 PROMPT='$(prompt_info)%B%F{green}%n@%m%f %F{blue}%3~%f $%b '
