@@ -1,0 +1,66 @@
+# .flake8
+#
+# DESCRIPTION
+#       Configuration file for the python linter flake8.
+#
+#       This configuration is based on the generic
+#       configuration published on GitHub.
+#
+# AUTHOR   krnd
+# VERSION  v1.0
+#
+# SEE ALSO
+#       http://flake8.pycqa.org/en/latest/user/options.html
+#       http://flake8.pycqa.org/en/latest/user/error-codes.html
+#       http://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
+#       http://gist.github.com/krnd
+#
+[flake8]
+
+jobs = auto
+
+verbose = 0
+quiet = 0
+
+format = default
+output-file = .flake8.log
+tee = True
+
+exclude = .git,__pycache__,
+filename = *.py
+
+builtins =
+
+disable-noqa = False
+
+max-line-length = 100
+max-complexity = 10
+hang-closing = False
+
+# count = True
+# show-source = True
+# statistics = True
+
+# ERROR CODES
+#
+# E/W  - PEP8 errors/warnings (pycodestyle)
+# F    - linting errors (pyflakes)
+# C    - McCabe complexity error (mccabe)
+#
+# W191 - Indentation contains tabs
+# E117 - Mixed indentation (tabs)
+# Specify a list of codes to ignore.
+ignore =
+    W191,
+	E117
+
+select = E,W,F,C,I
+# enable-extensions =
+
+doctests = True
+include-in-doctest =
+exclude-in-doctest =
+
+application-import-names=
+	import-order-style
+
