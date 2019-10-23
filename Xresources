@@ -1,0 +1,57 @@
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.antialias: rgba
+Xft.rgba: rgb
+
+URxvt.loginShell: true
+
+! Disable keycap mode
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Enable copy/paste with C-Shift-(c/v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*scrollTtyKeypress: true
+
+! Disable scrollbar
+URxvt*scrollBar: false
+
+! Underline urls on mouseover
+URxvt.url-select.underline: true
+
+! Font
+URxvt.font: xft:Source Code Pro for Powerline:size=11,xft:Noto Emoji:size=10
+
+! Color scheme
+URxvt.foreground: 	#93A1A1
+URxvt.background:	#000000
+URxvt.cursorColor:	#93A1A1
+
+! Black
+URxvt.color0:		#000000
+URxvt.color8:		#000000
+! Red
+URxvt.color1:		#FF5555
+URxvt.color9:		#FF5555
+! Green
+URxvt.color2:		#55FF55
+URxvt.color10:		#55FF55
+! Yellow
+URxvt.color3:		#FFFF55
+URxvt.color11:		#FFFF55
+! Blue
+URxvt.color4:		#5555FF
+URxvt.color12:		#5555FF
+! Magenta
+URxvt.color5:		#FF55FF
+URxvt.color13:		#FF55FF
+! Cyan
+URxvt.color6:		#55FFFF
+URxvt.color14:		#55FFFF
+! White
+URxvt.color7:		#EEEEEE
+URxvt.color15:		#EEEEEE
