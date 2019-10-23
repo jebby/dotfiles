@@ -1,0 +1,32 @@
+
+[core]
+	editor = vim
+	ignorecase = false
+	showUntrackedFiles = all
+	exludesfile = ~/.gitignore
+
+[diff]
+	tool = vimdiff
+	prompt = false
+
+[difftool]
+	prompt = false
+
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+
+[alias]
+	ls = ls-files
+
+	# Show commit log for repository with short sha hash
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset)\t%C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)'
+
+	# Show commit log for repository with long sha hash
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%H%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+
+	# Same as lg, but with name on the left-hand side
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(dim white)%an - %C(reset)%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset)%C(auto)%d%C(reset)'
+
+	# Show git log with commit changes.
+	ll = log --graph --abbrev-commit --decorate --numstat --pretty=format:'%C(bold blue)%h%C(auto)%d %C(dim white)- %s%C(bold yellow) [%an] %C(bold green)(%ar)\n'
