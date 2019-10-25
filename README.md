@@ -19,6 +19,7 @@ My personal dotfiles
 | ------------- | --------------------- |
 | i3 | ~/.i3 |
 | ipython | ~/.ipython |
+| cmus | ~/.config/cmus |
 | mplayer | ~/.mplayer |
 | qutebrowser | ~/.config/qutebrowser |
 | zsh | ~/.zsh |
