@@ -64,10 +64,8 @@ $ rm account_passwords.txt
 
 Replacing `<my_gpg_user>` with the value set in `~/.muttrc`
 
-If everything was done properly, executing:
+If everything was done properly, executing `mutt` should result
+in a password prompt to decrypt the gpg file for `my_account_1`
 
-```
-gpg -dr <my_gpg_user> ~/.mutt/accounts/<some_account>.gpg
-```
-
-should output the decrypted contents of the file. 
+Pressing <F2>, <F3>, and <F4> should then changes the active account
+to `my_account_1`, `my_account_2`, and `my_account_3` respectively
