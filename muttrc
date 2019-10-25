@@ -1,0 +1,81 @@
+set my_gpg_user = ""
+set my_account_1 = ""
+set my_account_2 = ""
+set my_account_3 = ""
+
+set alias_file = "~/.mutt/aliases.mutt"
+
+# Needed for some reason to bind macros
+# to mailboxes with spaces in the name?
+bind editor <space> noop
+
+set sidebar_divider_char = "│"
+
+# Cache messages to load faster
+set message_cachedir = "~/.mutt/cache"
+set header_cache = "~/.mutt/cache"
+
+
+# Move to top/bottom with gg/G
+bind pager gg top
+bind pager G bottom
+bind attach,index gg first-entry
+bind attach,index G last-entry
+
+# Faster mailbox load time
+set sleep_time = 0
+
+# Mark tagged messages as read
+macro index A "<tag-pattern>~T<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>"
+
+macro index .sa "l ^a^kall\n" 			# show all messages
+macro index .so "l ^a^k^O\n 			# show old messages only
+macro index .sn "l ^a^k~N\n" 			# show unread/new only
+macro index .sf "l ~F\n" 				# show flagged messages only
+macro index .hl "l ^a^k!~l\n" 			# hide list messages
+
+set editor = "vim"
+set charset = "utf-8"
+set pager_context = 5
+set menu_scroll = yes
+
+auto_view text/html
+alternative_order text/plain text/html
+
+score "~A" 1
+score "~N" -1
+set sort_aux = score
+set sort = reverse-threads
+
+unset mark_old
+set check_mbox_size = yes
+set check_new = yes
+
+set sidebar_width = 28
+set sidebar_visible = yes
+color sidebar_new color235 color41
+
+macro index,pager \cb "<pipe-message> w3m -I "utf-8" -T text/html | urlscan<Enter>"
+
+macro index .. '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager .. '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind index K sidebar-prev
+bind pager K sidebar-prev
+bind index J sidebar-next
+bind pager J sidebar-next
+bind index O sidebar-open
+bind pager O sidebar-open
+
+bind pager j next-line
+bind pager k previous-line
+
+set mail_check = 180
+
+source "~/.mutt/accounts/$my_account_1.mutt"
+folder-hook $folder 'source ~/.mutt/accounts/$my_account_1.mutt'
+
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/$my_account_1.mutt<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/$my_account_2.mutt<enter><change-folder>!<enter>'
+macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/accounts/$my_account_3.mutt<enter><change-folder>!<enter>'
+
+source ~/.mutt/theme.mutt

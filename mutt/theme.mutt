@@ -1,0 +1,59 @@
+set my_color_default="color0"
+color normal		default		 $my_color_default	# For $my_color_default.
+color index			brightgreen  $my_color_default		~N
+color index			green		 $my_color_default		~O
+color index			white		 color161		~F
+# Changes start here
+color index			black		 color180		~T
+color index			black		 brightred		~D
+
+color body			brightgreen  $my_color_default		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color attachment	magenta		 $my_color_default
+color signature		brightwhite	 $my_color_default
+color search		brightred	 black
+color indicator		black		 color32
+color error			white		 red
+color status		brightwhite	 color233
+color tree			brightwhite  $my_color_default
+color tilde			cyan		 $my_color_default
+
+color hdrdefault	black		 color248
+color header		black		 color248		"^From:"
+color header		black		 color248		"^Subject:"
+
+color quoted		cyan		 $my_color_default
+color quoted1		brightcyan	 $my_color_default
+color quoted2		blue		 $my_color_default
+color quoted3		green		 $my_color_default
+color quoted4		yellow		 $my_color_default
+color quoted5		red			 $my_color_default
+
+# Gpg
+color body			green		 $my_color_default        "^gpg: Good signature from"
+color body			brightred	 $my_color_default		"^gpg: Bad signature from"
+color body			brightred	 $my_color_default		"^gpg: BAD signature from"
+color body			brightred	 $my_color_default		"^gpg: Note: This key has expired!"
+color body			brightyellow $my_color_default		"^gpg: WARNING: This key is not certified with a trusted signature!"
+color body			brightyellow $my_color_default		"^gpg:\s*There is no indication that the signature belongs to the owner."
+color body			brightyellow $my_color_default		"^gpg: can't handle these multiple signatures"
+color body			brightyellow $my_color_default		"^gpg: signature verification suppressed"
+color body			brightyellow $my_color_default		"^gpg: invalid node with packet of type"
+
+
+# Git diff colors
+# color body			brightwhite	 $my_color_default         ^[[:space:]].*
+color body			yellow		 $my_color_default         ^(diff).*
+
+color body			red			 $my_color_default         "^\-\-\- .*"
+color body			green		 $my_color_default         "^[\+]{3} .*"
+color body			black		 brightgreen     "^[\+][^\+]+.*"
+color body			black		 brightred		 "^\-[^\-]+.*"
+
+#color body			black      brightred			 ^[\-*]\s.*
+#color body			black      brightgreen			 ^[\+*]\s.*
+#color body			black		 green			 ^[\+]\s.*    
+#color body			black		 red			 ^[\-]\s.*   
+color body			brightblue   $my_color_default         [@@].*      
+color body			brightwhite  $my_color_default         ^(\s).*     
+color body			brightwhite  $my_color_default         ^(Signed-off-by).*              
+color body			brightwhite  $my_color_default         ^(Cc)

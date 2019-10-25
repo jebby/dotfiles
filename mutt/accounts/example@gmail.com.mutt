@@ -1,0 +1,38 @@
+set imap_user = "<change this to your email>"
+set realname = "<change this to your name>"
+set from = "$imap_user"
+
+set alias_file = "~/.mutt/contacts.muttrc"
+
+set smtp_url = "smtp://$imap_user@smtp.gmail.com:587/"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record= "imaps://imap.gmail.com/[Gmail]/Sent Mail"
+
+
+unmailboxes *
+mailboxes +"INBOX"
+mailboxes +"_________________"
+mailboxes +"[Gmail]/All Mail"
+mailboxes +"[Gmail]/Drafts"
+mailboxes +"[Gmail]/Sent Mail"
+mailboxes +"[Gmail]/Spam"
+mailboxes +"[Gmail]/Trash"
+
+bind index <f5> imap-fetch-mail
+
+set status_format="Account: $imap_user (Folder: %f) [Flagged:%F Msgs:%m%?n? New:%n?%?d? Del:%d?%?p? Post:%p?] (%l)%>-(%P)---"
+
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>"
+macro index gi "<change-folder>=INBOX<enter>"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>"
+macro index gt "<change-folder>=[Gmail]/Trash<enter>"
+
+macro index,pager MA "<tag-pattern>~T<enter><tag-prefix><save-message>=[Gmail]/All Mail<enter><enter><untag-pattern>.<enter><enter-command>echo 'Message(s)archived.'<enter>"
+
+macro index,pager MT "<tag-pattern>~T<enter><tag-prefix><save-message>=[Gmail]/Trash<enter><enter><untag-pattern>.<enter><enter-command>echo 'Message(s) moved to Trash.'<enter>"
+
+source "gpg -d -r $my_gpg_user ~/.mutt/accounts/$imap_user.gpg |"
