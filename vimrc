@@ -168,15 +168,6 @@ let g:airline#extensions#tabline#show_tab_count = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_empty = 0
 
-" let g:airline_theme_patch_func = 'AirlineThemePatch'
-"   function! AirlineThemePatch(palette)
-"     if g:airline_theme == 'badwolf'
-"       for colors in values(a:palette.inactive)
-"         let colors[3] = 245
-"       endfor
-"     endif
-"   endfunction
-
 """ Keybinds
 """" Leader key
 let maplocalleader = ","
