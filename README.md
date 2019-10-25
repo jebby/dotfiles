@@ -68,5 +68,5 @@ Replacing `<my_gpg_user>` with the value set in `~/.muttrc`
 If everything was done properly, executing `mutt` should result
 in a password prompt to decrypt the gpg file for `my_account_1`
 
-Pressing <F2>, <F3>, and <F4> should then changes the active account
+Pressing F2, F3, and F4 should then changes the active account
 to `my_account_1`, `my_account_2`, and `my_account_3` respectively
