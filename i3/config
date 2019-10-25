@@ -1,6 +1,3 @@
-for_window [class="Zathura"] floating enable
-for_window [window_role="pop-up"] floating enable
-
 set $HOST "arch-laptop"
 
 # Set up Super and alt as modifier keys
