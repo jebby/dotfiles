@@ -24,6 +24,7 @@ Plug 'markonm/traces.vim'
 
 " Git integration
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Task management
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
