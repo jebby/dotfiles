@@ -1,13 +1,6 @@
-# Font ===================================================
 font = "Source Code Pro for Powerline"
-
-# Subtitles
-
 subfont-text-scale = 3
 subalign = 2
-# sub-bg-alpha = 128
-# sub-bg-color = 0
-# subpos = 90
 
 # Use subtitle files matching filename
 sub-fuzziness = 1
