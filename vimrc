@@ -303,6 +303,11 @@ vmap gD <Plug>(searchhi-v-gD)
 nnoremap zn nzzzv
 nnoremap zN Nzzzv
 
+"""" Gitgutter mappings
+nnoremap <leader>gs :GitGutterStageHunk<CR>
+nnoremap <leader>gn :GitGutterNextHunk<CR>
+nnoremap <leader>gN :GitGutterPrevHunk<CR>
+
 """ Commands
 " Save file as sudo
 cmap w!! w !sudo tee > /dev/null %
