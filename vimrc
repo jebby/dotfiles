@@ -307,7 +307,7 @@ nnoremap zN Nzzzv
 nnoremap <leader>gs :GitGutterStageHunk<CR>
 xnoremap <leader>gs :GitGutterStageHunk<CR>
 nnoremap <leader>gn :GitGutterNextHunk<CR>
-nnoremap <leader>gN :GitGutterPrevHunk<CR>
+nnoremap <leader>gp :GitGutterPrevHunk<CR>
 
 """" Fugitive mappings
 nnoremap <leader>gc :Gcommit
