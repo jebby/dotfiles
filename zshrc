@@ -20,7 +20,7 @@ setopt NOMATCH
 setopt PROMPT_SUBST				 # Allow command substitution in prompt command
 
 bindkey -e
-zstyle :compinstall filename '/home/jebby/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
