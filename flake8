@@ -23,7 +23,7 @@ verbose = 0
 quiet = 0
 
 format = default
-output-file = .flake8.log
+# output-file = .flake8.log
 tee = True
 
 exclude = .git,__pycache__,
