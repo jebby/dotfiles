@@ -301,7 +301,7 @@ nnoremap <leader>gn :GitGutterNextHunk<CR>
 nnoremap <leader>gp :GitGutterPrevHunk<CR>
 
 """" Fugitive mappings
-nnoremap <leader>gc :Gcommit
+nnoremap <leader>gc :Gcommit<CR>
 
 """ Commands
 " Save file as sudo
