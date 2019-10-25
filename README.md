@@ -1,6 +1,7 @@
 # Dotfiles
 
-My personal dotfiles
+My personal dotfiles for X11, zsh, vim, tmux,
+i3, qutebrowser and more
 
 ### File paths
 | Filename | Destination |
