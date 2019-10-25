@@ -21,6 +21,7 @@ Plug 'troydm/zoomwintab.vim'
 Plug 'jebby/vim-searchhi'
 Plug 'osyo-manga/vim-anzu'
 Plug 'markonm/traces.vim'
+Plug 'romainl/vim-qf'
 
 " Git integration
 Plug 'airblade/vim-gitgutter'
@@ -28,7 +29,6 @@ Plug 'tpope/vim-fugitive'
 
 " Task management
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
-Plug 'romainl/vim-qf'
 
 " Tmux integration
 Plug 'christoomey/vim-tmux-navigator'
