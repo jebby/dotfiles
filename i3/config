@@ -1,24 +1,7 @@
-# for_window [class="MPlayer"] layout tabbed enable
-# assign [class="MPlayer"] 3
-
-for_window [title="tmuxmplayer"] border none
-for_window [title="tmuxmplayer"] floating enable
-assign [title="tmuxmplayer"] 1
-
 for_window [class="Zathura"] floating enable
 for_window [window_role="pop-up"] floating enable
 
-# for_window[class="xfd"] border enable 
-# for_window[class="Desktop"] floating disable
-# for_window[class="xfdesktop"] fullscreen disable
-# for_window [class="xfdesktop"] fullscreen enable
-# assign [class="xfdesktop"] 1
-
-# for_window [class="notification_popup"] floating enable
-# for_window [class="Lxterminal"] layout tabbed enable
-
 set $HOST "arch-laptop"
-
 
 # Set up Super and alt as modifier keys
 set $super Mod4
@@ -26,14 +9,12 @@ set $mod Mod1
 
 # Use a nice font
 font pango:Source Code Pro for Powerline Regular 8
-# font pango:Font Awesome 5 Brands Regular 8
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
 # Start a terminal with urxvt and (re)attach to a tmux sessiongtk.WINDOW_POPUP
 bindsym $super+Return exec urxvt -e tmux new-session -ADs "$HOST"
-# bindsym $super+Return exec lxterminal -e tmux new-session -ADs "$HOST"
 
 # Open a terminal using lxterminal
 bindsym $super+Shift+Return exec lxterminal
@@ -207,11 +188,6 @@ set $mode_display Display Settings: [v] VGA, [h] HDMI
 mode "$mode_display" {
 	bindsym v mode "$mode_vga"
 	bindsym h mode "$mode_hdmi"
-	# bindsym v exec --no-startup-id xrandr --output VGA-1 --auto --left-of eDP-1, mode "default"
-	# bindsym h exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1, mode "default"
-	# bindsym x exec --no-startup-id xrandr --output VGA-1 --auto --off, mode "default"
-	# bindsym y exec --no-startup-id xrandr --output HDMI-1 --auto --off, mode "default"
-
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
@@ -220,19 +196,12 @@ bindsym $mod+x mode "$mode_display"
 
 set $mode_system System (e) logout, (s) suspend
 mode "$mode_system" {
-    # bindsym l exec --no-startup-id i3lock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    # bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    # bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    # bindsym p exec --no-startup-id systemctl poweroff, mode "default"
-
-    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+Delete mode "$mode_system"
-
 
 
 # i3bar setup
@@ -260,33 +229,16 @@ bindsym $super+m      mode $launch
 
 mode $launch {
 	bindsym q exec qutebrowser; mode "default"
-	bindsym t split v; exec lxterminal -e tmux new-session -ADs TmuxSession; mode "default"
+	bindsym t split v; exec lxterminal; mode "default"
 	bindsym g exec gimp; mode "default"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
 
-# set $quadrant "Quadrant: [h] [l] [j] [k] [u] [i] [g] [G]"
-# bindsym $super+n mode $quadrant
-# mode $quadrant {
-	# bindsym j exec ~/i3moveit.py bottom_left
-	# bindsym k exec ~/i3moveit.py bottom_right
-	# bindsym u exec ~/i3moveit.py top_left
-	# bindsym i exec ~/i3moveit.py top_right
-	# bindsym h exec ~/i3moveit.py left
-	# bindsym l exec ~/i3moveit.py right
-# 
-	# bindsym g exec ~/i3moveit.py top
-	# bindsym Shift+G exec ~/i3moveit.py bottom
-	# bindsym Tab focus left
-	# bindsym Return mode "default"
-	# bindsym Escape mode "default"
-# }
-
-bindsym $super+p sticky toggle
 
 # Keybindings =======================================
-# bindsym $super+y fullscreen toggle; floating enable; resize set 422 240; sticky toggle; move position 1125 600
+# Toggle sticy for the current window
+bindsym $super+p sticky toggle
 
 # Brightness Keys
 bindsym XF86MonBrightnessDown exec light -U 5
@@ -311,5 +263,3 @@ bindsym $mod+Shift+s scratchpad toggle
 
 focus_wrapping no
 exec --no-startup-id compton
-
-
