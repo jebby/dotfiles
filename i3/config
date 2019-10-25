@@ -213,7 +213,7 @@ bar {
 		inactive_workspace 	#444444 #444444 #aaaaaa
 		urgent_workspace 	#f24126 #f24126 #ffffff
 	}
-	status_command py3status -c ~/.i3/i3status.conf
+	status_command i3status -c ~/.i3/i3status.conf
 	tray_output primary
 }
 
