@@ -316,7 +316,7 @@ cmap w!! w !sudo tee > /dev/null %
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p:h').'/' : '%%'
 
 " Format json
-command FormatJson %!python -m json.tool
+command! FormatJson %!python -m json.tool
 
 " Make quickfix and location list loop
 command! Cnext try | cnext | catch | cfirst | catch | endtry
