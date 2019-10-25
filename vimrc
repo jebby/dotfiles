@@ -102,7 +102,6 @@ let g:traces_preserve_view_state = 1
 
 """"" Anzu
 let g:anzu_status_format = "%p [%i/%l]"
-" highlight AnzuStatusFormat cterm=bold ctermfg=red ctermbg=blue
 " let g:anzu_status_format = "%#WarningMessage#%p %#Keyword#(%i/%l)%#None#"
 
 """"" vim-qf
