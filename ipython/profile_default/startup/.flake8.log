@@ -1,0 +1,19 @@
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:4:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:4:1: F401 'math' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:7:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:7:1: I202 Additional newline in a group of imports. 'import os' is identified as Stdlib and 'import math' is identified as Stdlib.
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:7:1: F401 'os' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:10:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:10:1: I202 Additional newline in a group of imports. 'import random' is identified as Stdlib and 'import os' is identified as Stdlib.
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:10:1: F401 'random' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:13:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:13:1: I202 Additional newline in a group of imports. 'import sys' is identified as Stdlib and 'import random' is identified as Stdlib.
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:13:1: F401 'sys' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:16:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:16:1: I202 Additional newline in a group of imports. 'import time' is identified as Stdlib and 'import sys' is identified as Stdlib.
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:16:1: F401 'time' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:19:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:19:1: F401 'numpy as np' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:22:1: E402 module level import not at top of file
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:22:1: F401 'requests' imported but unused
+/home/jebby/Git/git_dotfiles/ipython/profile_default/startup/00-init.py:27:2: W291 trailing whitespace

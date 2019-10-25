@@ -21,9 +21,3 @@ print("import numpy as np")
 
 import requests
 print("import requests")
-
-#  import Xlib.display
-#  print("import Xlib.display")
-#  
-#  import Xlib.X
-#  print("import Xlib.X")
