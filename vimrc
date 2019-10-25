@@ -300,8 +300,8 @@ vmap gD <Plug>(searchhi-v-gD)
 
 
 """" Go to search result in center of the screen
-nnoremap zn nzzzv
-nnoremap zN Nzzzv
+nmap zn nzzzv
+nmap zN Nzzzv
 
 """" Gitgutter mappings
 nnoremap <leader>gs :GitGutterStageHunk<CR>
