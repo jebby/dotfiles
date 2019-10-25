@@ -271,10 +271,6 @@ nnoremap <leader>lp :Lprev<CR>
 nnoremap <leader>lf :call setloclist(0, uniq(getloclist(0)))<CR>
 
 
-"""" Flake8 Mappings
-nnoremap <leader>f :call flake8#Flake8()<CR>
-nnoremap <leader>F :call flake8#Flake8UnplaceMarkers()<CR>
-
 """" Todo.txt mappings
 " Open todo.txt in the current directory
 nnoremap <leader>T :split todo.txt<CR>
