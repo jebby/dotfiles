@@ -7,11 +7,7 @@ MAX_VOL=200
 
 # The number of steps to move the volume.
 STEP=5
-
-SINK=$(pactl list sinks | grep -B3 "Description: DUAL BT" | grep -oP "Sink #\K(\d+)")
-if [ -z $SINK ]; then
-	SINK="0"
-fi
+SINK="0"
 
 echo "SINK: $SINK"
 
