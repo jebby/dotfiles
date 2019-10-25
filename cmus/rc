@@ -1,0 +1,8 @@
+# Set directory to music
+add /home/jebby/Documents/Music
+
+# Use pulseaudio as output plugin
+set output_plugin=pulse
+
+# Set the colorscheme
+colorscheme onedark
