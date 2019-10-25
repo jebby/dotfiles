@@ -309,6 +309,9 @@ xnoremap <leader>gs :GitGutterStageHunk<CR>
 nnoremap <leader>gn :GitGutterNextHunk<CR>
 nnoremap <leader>gN :GitGutterPrevHunk<CR>
 
+"""" Fugitive mappings
+nnoremap <leader>gc :Gcommit
+
 """ Commands
 " Save file as sudo
 cmap w!! w !sudo tee > /dev/null %
