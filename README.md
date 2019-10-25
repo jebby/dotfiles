@@ -27,7 +27,7 @@ My personal dotfiles
 | zsh | ~/.zsh |
 
 ### Mutt account setup
-- Change the following lines in `~/.muttrc`:
+- Modify the following lines in `~/.muttrc`:
 
 ```
 set my_gpg_user = ""
@@ -44,5 +44,30 @@ set my_account_3 = ""
 - Go to `~/.mutt/accounts/` and copy an appropriate template for each
 `my_account_n`, replacing 'example' with the email address to be used.
 
-- Enter an email address and realname on the first two lines of each file
-that is created
+- Enter an email address and realname on the first two lines of each new file that was created
+
+- Create a new file for each `my_account_n` created,
+and enter the following contents, replacing 'password'
+with the account's actual password:
+```
+set imap_pass="password"
+set smtp_pass="password"
+```
+
+Then encrypt the files with gpg by executing:
+
+```
+$ gpg -er <my_gpg_user> account_passwords.txt
+$ shred account_passwords.txt
+$ rm account_passwords.txt
+```
+
+Replacing `<my_gpg_user>` with the value set in `~/.muttrc`
+
+If everything was done properly, executing:
+
+```
+gpg -dr <my_gpg_user> ~/.mutt/accounts/<some_account>.gpg
+```
+
+should output the decrypted contents of the file. 
