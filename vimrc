@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 
 " Misc
 Plug 'machakann/vim-highlightedyank'
+Plug 'jamessan/vim-gnupg'
 
 " Marks
 Plug 'kshenoy/vim-signature'
