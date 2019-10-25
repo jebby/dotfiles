@@ -41,8 +41,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 
 " Python
-Plug 'nvie/vim-flake8', {'for': 'python'}
-" Plug 'nvie/vim-pyunit', {'for': 'python'}
 Plug 'w0rp/ale'
 
 " Deoplete and dependencies/sources
@@ -113,15 +111,6 @@ let g:qf_auto_open_loclist = 1
 let g:qf_bufname_or_text = 0
 let g:qf_auto_resize = 0
 let g:qf_auto_quit = 1
-
-
-""""" Flake8
-let g:flake8_show_in_gutter = 1
-let g:flake8_quickfix_height = 10
-" let g:flake8_error_marker = "E>"
-" let g:flake8_warning_marker = "W>"
-" let g:flake8_pyflake_marker = "F>"
-" let g:flake8_naming_marker = "N>"
 
 """"" Ale
 let g:ale_enabled = 1
