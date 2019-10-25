@@ -255,6 +255,9 @@ nnoremap <leader>co :copen<CR>
 nnoremap <leader>cn :Cnext<CR>
 nnoremap <leader>cp :Cprev<CR>
 
+" Filter qflist to only contain unique entries
+nnoremap <leader>cf :call setqflist(uniq(getqflist()), "r")<CR>
+
 " Toggle the quickfix window.
 " Requires qf-vim
 nnoremap <expr> <leader>ct qf#IsQfWindowOpen() ? ':cclose<CR>' : ':copen<CR>'
@@ -263,6 +266,9 @@ nnoremap <expr> <leader>ct qf#IsQfWindowOpen() ? ':cclose<CR>' : ':copen<CR>'
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>ln :Lnext<CR>
 nnoremap <leader>lp :Lprev<CR>
+
+" Filter loclist to only contain unique entries
+nnoremap <leader>lf :call setloclist(0, uniq(getloclist(0)))<CR>
 
 
 """" Flake8 Mappings
