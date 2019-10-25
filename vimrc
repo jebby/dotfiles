@@ -115,6 +115,7 @@ let g:qf_auto_quit = 1
 
 """"" Ale
 let g:ale_enabled = 1
+let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
 let g:ale_set_signs = 1
 let g:ale_set_highlights = 0
