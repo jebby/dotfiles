@@ -1,5 +1,5 @@
 # Set directory to music
-add /home/jebby/Documents/Music
+add ~/Documents/Music
 
 # Use pulseaudio as output plugin
 set output_plugin=pulse
