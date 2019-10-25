@@ -1,4 +1,3 @@
-" TODO - Organize sections
 """ Plugins
 """" Load Plugins
 call plug#begin('~/.vim/plugged')
