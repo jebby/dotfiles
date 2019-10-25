@@ -101,8 +101,7 @@ let g:searchhi_clear_all_asap = 1
 let g:traces_preserve_view_state = 1
 
 """"" Anzu
-let g:anzu_status_format = "%p [%i/%l]"
-" let g:anzu_status_format = "%#WarningMessage#%p %#Keyword#(%i/%l)%#None#"
+let g:anzu_status_format = "%#AnzuStatusFormatQuery#/%p %#AnzuStatusFormatCount#(%i/%l)%#None#"
 
 """"" vim-qf
 let g:qf_mapping_ack_style = 1
@@ -339,8 +338,8 @@ augroup Highlights
 		\ | highlight IncSearch ctermfg=white ctermbg=blue
 		\ | highlight link TracesReplace IncSearch
 		\ | highlight link TracesSearch Search 
-		" \ | highlight AnzuStatusFormatQuery cterm=bold
-		" \ | highlight AnzuStatusFormatCount cterm=bold ctermfg=114
+		\ | highlight AnzuStatusFormatQuery cterm=bold
+		\ | highlight AnzuStatusFormatCount cterm=bold ctermfg=180
 augroup END
 colorscheme onedark
 
