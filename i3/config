@@ -252,8 +252,9 @@ bindsym XF86AudioRaiseVolume exec ~/.i3/bin/volume_increase.sh
 
 # Window Classification  ==========================================
 assign [class="qutebrowser"] 2
-# assign [class="MPlayer"] 3
-for_window [title="TmuxSession"] move container to workspace 1
+assign [class="MPlayer"] 3
+for_window [class="Zathura"] floating enable
+for_window [window_role="pop-up"] floating enable
 
 bindsym $mod+p exec scrot '%Y-%m-%d_%H:%M:%S_scrot.png' -e 'mv $f ~/Documents/screenshots/'
 
