@@ -478,6 +478,13 @@ augroup Views
 	autocmd BufWinEnter *.* silent loadview 
 augroup END
 
+" Remove the `o` flag from formatoptions when opening a buffer.
+" I find it really annoying to have a comment auto inserted when pressing o.
+augroup FormatOptions
+	autocmd!
+	autocmd BufReadPost,BufNewFile * setlocal formatoptions-=o
+augroup END
+
 """ Helper functions
 function! VimFoldText()
   " handle special case of normal comment first
