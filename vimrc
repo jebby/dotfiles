@@ -26,6 +26,7 @@ Plug 'romainl/vim-qf'
 " Git integration
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'rickhowe/diffchar.vim'
 
 " Task management
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
