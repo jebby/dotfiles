@@ -467,8 +467,10 @@ augroup END
 " Toggle relative number when current buffer gains/loses focus
 augroup numbertoggle
 	autocmd!
-	autocmd BufEnter,WinEnter,BufWinEnter,BufEnter,FocusGained * if &number | set relativenumber | endif
-	autocmd BufLeave,WinLeave,BufWinLeave,BufLeave,FocusLost   * if &number | set norelativenumber | endif
+	autocmd BufEnter,WinEnter,BufWinEnter,BufEnter,FocusGained * if &number |
+		\ setlocal relativenumber cursorlineopt=number| endif
+	autocmd BufLeave,WinLeave,BufWinLeave,BufLeave,FocusLost   * if &number |
+		\ setlocal norelativenumber cursorlineopt=both | endif
 augroup END
 
 " Save / load view when entering / leaving buffer
