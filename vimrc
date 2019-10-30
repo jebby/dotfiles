@@ -465,7 +465,7 @@ augroup searchhi
 augroup END
 
 " Toggle relative number and cursorline when current buffer gains/loses focus
-augroup CursorLineNumberToggle
+augroup CursorLineOptions
 	autocmd!
 	autocmd BufEnter,WinEnter,BufWinEnter,BufEnter,FocusGained * if &number |
 		\ setlocal relativenumber cursorlineopt=number | endif
