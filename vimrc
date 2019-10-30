@@ -464,8 +464,8 @@ augroup searchhi
 	autocmd User SearchHiOff echo g:anzu_no_match_word
 augroup END
 
-" Toggle relative number when current buffer gains/loses focus
-augroup numbertoggle
+" Toggle relative number and cursorline when current buffer gains/loses focus
+augroup CursorLineNumberToggle
 	autocmd!
 	autocmd BufEnter,WinEnter,BufWinEnter,BufEnter,FocusGained * if &number |
 		\ setlocal relativenumber cursorlineopt=number | endif
