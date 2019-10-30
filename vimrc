@@ -468,7 +468,7 @@ augroup END
 augroup numbertoggle
 	autocmd!
 	autocmd BufEnter,WinEnter,BufWinEnter,BufEnter,FocusGained * if &number |
-		\ setlocal relativenumber cursorlineopt=number| endif
+		\ setlocal relativenumber cursorlineopt=number | endif
 	autocmd BufLeave,WinLeave,BufWinLeave,BufLeave,FocusLost   * if &number |
 		\ setlocal norelativenumber cursorlineopt=both | endif
 augroup END
