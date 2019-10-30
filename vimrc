@@ -325,7 +325,7 @@ syntax on
 augroup Highlights
 	autocmd!
 	autocmd ColorScheme * highlight Normal ctermbg=none
-		\ | highlight CursorLine cterm=none ctermfg=none ctermbg=none
+		\ | highlight CursorLine cterm=none ctermfg=none ctermbg=233
 		\ | highlight CursorLineNr cterm=bold ctermfg=114
 		\ | highlight QuickFixLine cterm=reverse
 		\
